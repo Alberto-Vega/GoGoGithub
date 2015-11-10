@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        OAuthClient.requestGithubAccess(
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loginButtonSelected(sender: UIButton) {
-//        OAuthClient.shared.
+        OAuthClient.shared.requestGithubAccess()
     }
 
 }

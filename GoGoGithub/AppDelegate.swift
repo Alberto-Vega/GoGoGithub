@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        
+        OAuthClient.shared.exchangeCodeInURL(url)
+        
         return true
     }
 
