@@ -5,47 +5,44 @@
 ////  Created by Alberto Vega Gonzalez on 11/9/15.
 ////  Copyright © 2015 Alberto Vega Gonzalez. All rights reserved.
 ////
-//
-//import Foundation
-//
-//class GithubService {
-//    
-//static let sharedService = GithubService()
-//
-//class func reposForSearchTerm(searchTerm: String, reposCallback : (String?, [Repository]?) -> (Void)){
-//    
-//    var results : [Repository]!
-//    let baseURL = "https://api.github.com/search/repositories"
-//    let finalURL = baseURL + "?q=\(searchTerm)"
-//    
-//    let request = NSMutableURLRequest(URL: NSURL(string: finalURL)!)
-////    if let token = KeychainService.loadToken() {
-////        request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
-////    }
-//    
-//    if let url = NSURL(string: finalURL){
-//        NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-//            if let error = error {
-//                print("error")
-//                reposCallback("Could not connect to server", nil)
-//            } else if let httpResponse = response as? NSHTTPURLResponse {
-//                print("repos response: \(httpResponse.statusCode)")
-//                
-//                switch httpResponse.statusCode {
-//                case 200...299:
-//                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-////                        let repos = GithubJSONParser.reposInfoFromJSONData(data)
-////                        reposCallback(nil,repos)
-//                    })
-//                case 400...499:
-//                    reposCallback("this is our fault",nil)
-//                case 500...599:
-//                    reposCallback("this is the servers fault", nil)
-//                default:
-//                    reposCallback("error occured",nil)
-//                }
-//            }
-//        }).resume()
-//    }
-//}
-//}
+
+import Foundation
+
+class GithubService {
+    
+    static let sharedService = GithubService()
+    
+    class func searchWithTerm(term: String, completion: (success: Bool, json: [[String:AnyObject]]?) -> ()) {
+        
+        let token = OAuthClient.shared.token
+        
+        guard let url = NSURL(string: "https://api.github.com/search/repositories?q=term") else {return completion(success: false, json: nil)}
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
+            if let error = error {
+                print(error.description)
+                return completion(success: false, json: nil)
+                
+            }
+            if let data = data {
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+                    if let json = json as? [[String:AnyObject]]{
+                        return completion(success: true,json: json)
+                    } else {
+                        return completion(success: false,json: nil)
+                    }
+                    print(json)
+                } catch _ {
+                    return completion(success: false,json: nil)
+                }
+            }
+        }
+        // This is the official URL, use it. This will work.
+        // https://api.github.com/search/repositories?q=term
+        
+    }
+}

@@ -83,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF2D867B1BF2A03F00A906F3 /* GithubAPI */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEDC261BF12855007967A6 /* OAuthClient.swift */,
+				BF367A531BF1921F00B223A8 /* GithubService.swift */,
+				BF367A511BF18BA800B223A8 /* JSONParser.swift */,
+			);
+			name = GithubAPI;
+			sourceTree = "<group>";
+		};
 		BF367A571BF192DE00B223A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,12 +126,10 @@
 		BFEEDBF71BF125BF007967A6 /* GoGoGithub */ = {
 			isa = PBXGroup;
 			children = (
-				BF367A531BF1921F00B223A8 /* GithubService.swift */,
 				BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */,
 				BFEEDBFA1BF125BF007967A6 /* ViewController.swift */,
 				BFEEDBFC1BF125BF007967A6 /* Main.storyboard */,
-				BFEEDC261BF12855007967A6 /* OAuthClient.swift */,
-				BF367A511BF18BA800B223A8 /* JSONParser.swift */,
+				BF2D867B1BF2A03F00A906F3 /* GithubAPI */,
 				BFEEDBFF1BF125BF007967A6 /* Assets.xcassets */,
 				BFEEDC011BF125BF007967A6 /* LaunchScreen.storyboard */,
 				BFEEDC041BF125BF007967A6 /* Info.plist */,

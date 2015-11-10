@@ -10,7 +10,7 @@ import UIKit
 
 class OAuthClient {
     
-    private var token: String?
+    var token: String?
     
     private let kAccessTokenKey = "kAccessTokenKey"
     private let kOAuthBaseURLString = "https://github.com/login/oauth/"
@@ -21,7 +21,7 @@ class OAuthClient {
     
     func requestGithubAccess() {
         let authURL = NSURL(string: "\(kOAuthBaseURLString)authorize?client_id=\(kClientId)&scope=scope,email,repo)")!
-        UIApplication.sharedApplication().openURL(authURL)
+         UIApplication.sharedApplication().openURL(authURL)
     }
     
     func exchangeCodeInURL(codeURL : NSURL) {
@@ -38,12 +38,10 @@ class OAuthClient {
                             if let rootObject = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String : AnyObject] {
                                 
                                 print(rootObject["access_token"])
-                                print(rootObject)
                                 
                                 if let user = rootObject["access_token"]as? String {
                                     self.token =  user
                                     print("My token is \(user)")
-                                    
                                 }
                             }
                         } catch _ {}
