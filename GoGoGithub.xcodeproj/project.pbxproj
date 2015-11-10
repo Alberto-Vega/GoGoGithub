@@ -14,6 +14,7 @@
 		BFEEDC031BF125BF007967A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEDC011BF125BF007967A6 /* LaunchScreen.storyboard */; };
 		BFEEDC0E1BF125BF007967A6 /* GoGoGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDC0D1BF125BF007967A6 /* GoGoGithubTests.swift */; };
 		BFEEDC191BF125BF007967A6 /* GoGoGithubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDC181BF125BF007967A6 /* GoGoGithubUITests.swift */; };
+		BFEEDC271BF12855007967A6 /* OAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDC261BF12855007967A6 /* OAuthClient.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BFEEDC141BF125BF007967A6 /* GoGoGithubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoGoGithubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEDC181BF125BF007967A6 /* GoGoGithubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoGoGithubUITests.swift; sourceTree = "<group>"; };
 		BFEEDC1A1BF125BF007967A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEEDC261BF12855007967A6 /* OAuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */,
 				BFEEDBFA1BF125BF007967A6 /* ViewController.swift */,
 				BFEEDBFC1BF125BF007967A6 /* Main.storyboard */,
+				BFEEDC261BF12855007967A6 /* OAuthClient.swift */,
 				BFEEDBFF1BF125BF007967A6 /* Assets.xcassets */,
 				BFEEDC011BF125BF007967A6 /* LaunchScreen.storyboard */,
 				BFEEDC041BF125BF007967A6 /* Info.plist */,
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFEEDC271BF12855007967A6 /* OAuthClient.swift in Sources */,
 				BFEEDBFB1BF125BF007967A6 /* ViewController.swift in Sources */,
 				BFEEDBF91BF125BF007967A6 /* AppDelegate.swift in Sources */,
 			);
@@ -483,6 +487,7 @@
 				BFEEDC1F1BF125BF007967A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFEEDC201BF125BF007967A6 /* Build configuration list for PBXNativeTarget "GoGoGithubTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +496,7 @@
 				BFEEDC221BF125BF007967A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFEEDC231BF125BF007967A6 /* Build configuration list for PBXNativeTarget "GoGoGithubUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +505,7 @@
 				BFEEDC251BF125BF007967A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
