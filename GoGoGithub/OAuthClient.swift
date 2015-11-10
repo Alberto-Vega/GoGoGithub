@@ -27,6 +27,7 @@ class OAuthClient {
     func exchangeCodeInURL(codeURL : NSURL) {
         if let code = codeURL.query {
             let request = NSMutableURLRequest(URL: NSURL(string: "https://github.com/login/oauth/access_token?\(code)&client_id=\(kClientId)&client_secret=\(kClientSecret)")!)
+            
             request.HTTPMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
@@ -42,6 +43,7 @@ class OAuthClient {
                                 if let user = rootObject["access_token"]as? String {
                                     self.token =  user
                                     print("My token is \(user)")
+                                    
                                 }
                             }
                         } catch _ {}
