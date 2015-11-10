@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF367A521BF18BA800B223A8 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF367A511BF18BA800B223A8 /* JSONParser.swift */; settings = {ASSET_TAGS = (); }; };
+		BF367A541BF1921F00B223A8 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF367A531BF1921F00B223A8 /* GithubService.swift */; settings = {ASSET_TAGS = (); }; };
+		BF367A561BF192D700B223A8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF367A551BF192D700B223A8 /* Repository.swift */; settings = {ASSET_TAGS = (); }; };
 		BFEEDBF91BF125BF007967A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */; };
 		BFEEDBFB1BF125BF007967A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDBFA1BF125BF007967A6 /* ViewController.swift */; };
 		BFEEDBFE1BF125BF007967A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEDBFC1BF125BF007967A6 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF367A511BF18BA800B223A8 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		BF367A531BF1921F00B223A8 /* GithubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubService.swift; path = ../GithubService.swift; sourceTree = "<group>"; };
+		BF367A551BF192D700B223A8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BFEEDBF51BF125BF007967A6 /* GoGoGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoGoGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEDBFA1BF125BF007967A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,9 +82,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF367A571BF192DE00B223A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF367A551BF192D700B223A8 /* Repository.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		BFEEDBEC1BF125BF007967A6 = {
 			isa = PBXGroup;
 			children = (
+				BF367A571BF192DE00B223A8 /* Model */,
 				BFEEDBF71BF125BF007967A6 /* GoGoGithub */,
 				BFEEDC0C1BF125BF007967A6 /* GoGoGithubTests */,
 				BFEEDC171BF125BF007967A6 /* GoGoGithubUITests */,
@@ -99,10 +114,12 @@
 		BFEEDBF71BF125BF007967A6 /* GoGoGithub */ = {
 			isa = PBXGroup;
 			children = (
+				BF367A531BF1921F00B223A8 /* GithubService.swift */,
 				BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */,
 				BFEEDBFA1BF125BF007967A6 /* ViewController.swift */,
 				BFEEDBFC1BF125BF007967A6 /* Main.storyboard */,
 				BFEEDC261BF12855007967A6 /* OAuthClient.swift */,
+				BF367A511BF18BA800B223A8 /* JSONParser.swift */,
 				BFEEDBFF1BF125BF007967A6 /* Assets.xcassets */,
 				BFEEDC011BF125BF007967A6 /* LaunchScreen.storyboard */,
 				BFEEDC041BF125BF007967A6 /* Info.plist */,
@@ -260,7 +277,10 @@
 			files = (
 				BFEEDC271BF12855007967A6 /* OAuthClient.swift in Sources */,
 				BFEEDBFB1BF125BF007967A6 /* ViewController.swift in Sources */,
+				BF367A521BF18BA800B223A8 /* JSONParser.swift in Sources */,
+				BF367A541BF1921F00B223A8 /* GithubService.swift in Sources */,
 				BFEEDBF91BF125BF007967A6 /* AppDelegate.swift in Sources */,
+				BF367A561BF192D700B223A8 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

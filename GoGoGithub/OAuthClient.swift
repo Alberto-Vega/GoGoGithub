@@ -10,6 +10,8 @@ import UIKit
 
 class OAuthClient {
     
+    private var token: String?
+    
     private let kAccessTokenKey = "kAccessTokenKey"
     private let kOAuthBaseURLString = "https://github.com/login/oauth/"
     private let kClientId = "405cf0ef46239dcd8971"
@@ -22,7 +24,6 @@ class OAuthClient {
         UIApplication.sharedApplication().openURL(authURL)
     }
     
-    // URL Constructor.
     func exchangeCodeInURL(codeURL : NSURL) {
         if let code = codeURL.query {
             let request = NSMutableURLRequest(URL: NSURL(string: "https://github.com/login/oauth/access_token?\(code)&client_id=\(kClientId)&client_secret=\(kClientSecret)")!)
@@ -33,18 +34,25 @@ class OAuthClient {
                     
                     if let data = data {
                         do {
-                            
                             if let rootObject = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String : AnyObject] {
                                 
                                 print(rootObject["access_token"])
+                                print(rootObject)
                                 
+                                if let user = rootObject["access_token"]as? String {
+                                    self.token =  user
+                                    print("My token is \(user)")
+                                }
                             }
-                            
                         } catch _ {}
                     }
                 }
             }).resume()
         }
+    }
+    
+    func persistAccessToken(token: String) {
+        NSUserDefaults.standardUserDefaults().setObject(token, forKey : "PersistedAccessToken")
     }
 }
    
