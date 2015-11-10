@@ -41,6 +41,7 @@
 		BF367A511BF18BA800B223A8 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		BF367A531BF1921F00B223A8 /* GithubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubService.swift; path = ../GithubService.swift; sourceTree = "<group>"; };
 		BF367A551BF192D700B223A8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		BF367A581BF1D13900B223A8 /* midThreeElementsOfAnOddArray.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = midThreeElementsOfAnOddArray.playground; sourceTree = "<group>"; };
 		BFEEDBF51BF125BF007967A6 /* GoGoGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoGoGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEDBFA1BF125BF007967A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				BF367A551BF192D700B223A8 /* Repository.swift */,
+				BF367A581BF1D13900B223A8 /* midThreeElementsOfAnOddArray.playground */,
 			);
 			name = Model;
 			sourceTree = "<group>";
