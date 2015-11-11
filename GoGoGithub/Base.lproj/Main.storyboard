@@ -64,12 +64,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295" y="364"/>
+            <point key="canvasLocation" x="606" y="355"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="jqb-OB-AKo">
             <objects>
-                <viewController id="XPS-XB-PGC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="XPS-XB-PGC" customClass="HomeViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="821-cA-Q3m"/>
                         <viewControllerLayoutGuide type="bottom" id="8Cm-qu-baN"/>
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWn-dZ-NFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="358"/>
+            <point key="canvasLocation" x="1328" y="355"/>
         </scene>
     </scenes>
     <resources>

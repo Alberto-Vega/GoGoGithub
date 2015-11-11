@@ -12,16 +12,14 @@ let kAccessTokenKey = "token"
 
 class OAuthClient {
     
-    var token: String? {
-        
+    var token: String?
+        {
+
         get {
-//            return NSUserDefaults.standardUserDefaults().stringForKey(kAccessTokenKey)
             return KeychainService.loadFromKeychain() as? String
         }
         
         set {
-//            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kAccessTokenKey)
-//            NSUserDefaults.standardUserDefaults().synchronize()
             if let newValue = newValue {
              KeychainService.save(newValue)
         }
@@ -40,7 +38,7 @@ class OAuthClient {
          UIApplication.sharedApplication().openURL(authURL)
     }
     
-    func exchangeCodeInURL(codeURL : NSURL) {
+    func exchangeCodeInURL(codeURL : NSURL, completion: (success: Bool) -> ()) {
         if let code = codeURL.query {
             let request = NSMutableURLRequest(URL: NSURL(string: "https://github.com/login/oauth/access_token?\(code)&client_id=\(kClientId)&client_secret=\(kClientSecret)")!)
             
@@ -57,6 +55,11 @@ class OAuthClient {
                                 
                                 if let user = rootObject["access_token"]as? String {
                                     OAuthClient.shared.token =  user
+                                    
+                                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                                        completion(success: true)
+                                    })
+                                    
                                 }
                             }
                         } catch _ {}

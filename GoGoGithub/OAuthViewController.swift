@@ -8,8 +8,12 @@
 
 import UIKit
 
+typealias OAuthViewControllerCompletionHandler = () -> ()
+
 class OAuthViewController: UIViewController {
     
+    var oAuthCompletionHandler: OAuthViewControllerCompletionHandler?
+
     class func identifier() -> String {
         return "OAuthViewController"
     }
@@ -26,6 +30,12 @@ class OAuthViewController: UIViewController {
         }
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func processLogin() {
+        if let oAuthCompletionHandler = self.oAuthCompletionHandler {
+            oAuthCompletionHandler()
+        }
     }
     
     override func didReceiveMemoryWarning() {
