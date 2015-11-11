@@ -8,9 +8,21 @@
 
 import UIKit
 
+let kAccessTokenKey = "token"
+
 class OAuthClient {
     
-    var token: String?
+    var token: String? {
+        
+        get {
+            return NSUserDefaults.standardUserDefaults().stringForKey(kAccessTokenKey)
+        }
+        
+        set {
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kAccessTokenKey)
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
     
     private let kAccessTokenKey = "kAccessTokenKey"
     private let kOAuthBaseURLString = "https://github.com/login/oauth/"
@@ -36,12 +48,11 @@ class OAuthClient {
                     if let data = data {
                         do {
                             if let rootObject = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String : AnyObject] {
-                                
+                                print(rootObject)
                                 print(rootObject["access_token"])
                                 
                                 if let user = rootObject["access_token"]as? String {
-                                    self.token =  user
-                                    print("My token is \(user)")
+                                    OAuthClient.shared.token =  user
                                 }
                             }
                         } catch _ {}
@@ -49,10 +60,6 @@ class OAuthClient {
                 }
             }).resume()
         }
-    }
-    
-    func persistAccessToken(token: String) {
-        NSUserDefaults.standardUserDefaults().setObject(token, forKey : "PersistedAccessToken")
     }
 }
    

@@ -12,13 +12,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSUserDefaults.standardUserDefaults().stringForKey("PersistedAccessToken")
-        GithubService.searchWithTerm("") { (success, json) -> () in
+        
+        GithubService.searchWithTerm("imageview") { (success, json) -> () in
             if success {
-                print("hurray")
                 
-            } else {
-                print("error with search term open source")
+                print(json)
+                
             }
         }
         
@@ -31,9 +30,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginButtonSelected(sender: UIButton) {
-        OAuthClient.shared.requestGithubAccess()
-        
+        if OAuthClient.shared.token == nil {
+            OAuthClient.shared.requestGithubAccess()
+        } else {
+            print("Retrieved token from user defaults")
+        }
     }
-    
 }
 
