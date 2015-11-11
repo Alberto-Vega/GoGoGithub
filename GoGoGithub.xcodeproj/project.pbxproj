@@ -10,6 +10,7 @@
 		BF367A521BF18BA800B223A8 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF367A511BF18BA800B223A8 /* JSONParser.swift */; settings = {ASSET_TAGS = (); }; };
 		BF367A541BF1921F00B223A8 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF367A531BF1921F00B223A8 /* GithubService.swift */; settings = {ASSET_TAGS = (); }; };
 		BF367A561BF192D700B223A8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF367A551BF192D700B223A8 /* Repository.swift */; settings = {ASSET_TAGS = (); }; };
+		BFCA5E6B1BF3E81F00AC056B /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA5E6A1BF3E81F00AC056B /* KeyChainService.swift */; settings = {ASSET_TAGS = (); }; };
 		BFEEDBF91BF125BF007967A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */; };
 		BFEEDBFB1BF125BF007967A6 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDBFA1BF125BF007967A6 /* OAuthViewController.swift */; };
 		BFEEDBFE1BF125BF007967A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEDBFC1BF125BF007967A6 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		BF367A531BF1921F00B223A8 /* GithubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubService.swift; path = ../GithubService.swift; sourceTree = "<group>"; };
 		BF367A551BF192D700B223A8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BF367A581BF1D13900B223A8 /* midThreeElementsOfAnOddArray.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = midThreeElementsOfAnOddArray.playground; sourceTree = "<group>"; };
+		BFCA5E6A1BF3E81F00AC056B /* KeyChainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		BFEEDBF51BF125BF007967A6 /* GoGoGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoGoGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEDBFA1BF125BF007967A6 /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */,
+				BFCA5E6A1BF3E81F00AC056B /* KeyChainService.swift */,
 				BFEEDBFA1BF125BF007967A6 /* OAuthViewController.swift */,
 				BFEEDBFC1BF125BF007967A6 /* Main.storyboard */,
 				BF2D867B1BF2A03F00A906F3 /* GithubAPI */,
@@ -287,6 +290,7 @@
 			files = (
 				BFEEDC271BF12855007967A6 /* OAuthClient.swift in Sources */,
 				BFEEDBFB1BF125BF007967A6 /* OAuthViewController.swift in Sources */,
+				BFCA5E6B1BF3E81F00AC056B /* KeyChainService.swift in Sources */,
 				BF367A521BF18BA800B223A8 /* JSONParser.swift in Sources */,
 				BF367A541BF1921F00B223A8 /* GithubService.swift in Sources */,
 				BFEEDBF91BF125BF007967A6 /* AppDelegate.swift in Sources */,

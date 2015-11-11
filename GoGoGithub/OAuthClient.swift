@@ -15,12 +15,16 @@ class OAuthClient {
     var token: String? {
         
         get {
-            return NSUserDefaults.standardUserDefaults().stringForKey(kAccessTokenKey)
+//            return NSUserDefaults.standardUserDefaults().stringForKey(kAccessTokenKey)
+            return KeychainService.loadFromKeychain() as? String
         }
         
         set {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kAccessTokenKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
+//            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kAccessTokenKey)
+//            NSUserDefaults.standardUserDefaults().synchronize()
+            if let newValue = newValue {
+             KeychainService.save(newValue)
+        }
         }
     }
     
