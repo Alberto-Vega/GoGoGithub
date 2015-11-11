@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let token = OAuthClient.shared.token {
+            print("We have a token at did finishLaunching with options")
+        } else {
+            checkOAuthStatus()
+        }
         return true
     }
     
@@ -47,7 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func checkOAuthStatus() {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        if let loginViewController = storyboard.instantiateViewControllerWithIdentifier(OAuthViewController.identifier()) as? OAuthViewController {
+            window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            window?.makeKeyAndVisible()
+            window?.rootViewController = loginViewController
+        }
+    }
 }
 

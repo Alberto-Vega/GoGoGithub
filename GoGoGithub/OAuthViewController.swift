@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OAuthViewController: UIViewController {
+    
+    class func identifier() -> String {
+        return "OAuthViewController"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
