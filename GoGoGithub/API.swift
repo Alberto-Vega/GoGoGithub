@@ -31,7 +31,7 @@ class API {
                         //Requesting current user information. Comes back as a dictionary.
                         if let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? [String : AnyObject] {
                             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                                completion(success: true, json: json)
+                                completion(success: true, json: [json])
                             })
                         }
                     } catch _  { }

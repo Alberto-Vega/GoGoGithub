@@ -16,6 +16,7 @@
 		BFCA5E721BF4180600AC056B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA5E711BF4180600AC056B /* APIRequest.swift */; settings = {ASSET_TAGS = (); }; };
 		BFCA5E741BF4237900AC056B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA5E731BF4237900AC056B /* API.swift */; settings = {ASSET_TAGS = (); }; };
 		BFCA5E761BF4279D00AC056B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA5E751BF4279D00AC056B /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+		BFCA5E791BF46D6A00AC056B /* GetRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA5E781BF46D6A00AC056B /* GetRepositories.swift */; settings = {ASSET_TAGS = (); }; };
 		BFEEDBF91BF125BF007967A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */; };
 		BFEEDBFB1BF125BF007967A6 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEDBFA1BF125BF007967A6 /* OAuthViewController.swift */; };
 		BFEEDBFE1BF125BF007967A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEDBFC1BF125BF007967A6 /* Main.storyboard */; };
@@ -48,12 +49,14 @@
 		BF367A531BF1921F00B223A8 /* GithubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubService.swift; path = ../GithubService.swift; sourceTree = "<group>"; };
 		BF367A551BF192D700B223A8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BF367A581BF1D13900B223A8 /* midThreeElementsOfAnOddArray.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = midThreeElementsOfAnOddArray.playground; sourceTree = "<group>"; };
+		BF7F763D1BF475AF00D6BB88 /* FindLowestAndHIghest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FindLowestAndHIghest.playground; sourceTree = "<group>"; };
 		BFCA5E6A1BF3E81F00AC056B /* KeyChainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		BFCA5E6C1BF3F94400AC056B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BFCA5E6F1BF412CE00AC056B /* GithubCreateRepoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubCreateRepoService.swift; sourceTree = "<group>"; };
 		BFCA5E711BF4180600AC056B /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BFCA5E731BF4237900AC056B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BFCA5E751BF4279D00AC056B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BFCA5E781BF46D6A00AC056B /* GetRepositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRepositories.swift; sourceTree = "<group>"; };
 		BFEEDBF51BF125BF007967A6 /* GoGoGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoGoGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEDBF81BF125BF007967A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEDBFA1BF125BF007967A6 /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
@@ -98,11 +101,10 @@
 		BF2D867B1BF2A03F00A906F3 /* GithubAPI */ = {
 			isa = PBXGroup;
 			children = (
-				BFCA5E711BF4180600AC056B /* APIRequest.swift */,
-				BF367A531BF1921F00B223A8 /* GithubService.swift */,
-				BF367A511BF18BA800B223A8 /* JSONParser.swift */,
 				BFCA5E731BF4237900AC056B /* API.swift */,
+				BFCA5E711BF4180600AC056B /* APIRequest.swift */,
 				BFCA5E751BF4279D00AC056B /* Extensions.swift */,
+				BF367A511BF18BA800B223A8 /* JSONParser.swift */,
 			);
 			name = GithubAPI;
 			sourceTree = "<group>";
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				BF367A551BF192D700B223A8 /* Repository.swift */,
+				BF7F763D1BF475AF00D6BB88 /* FindLowestAndHIghest.playground */,
 				BF367A581BF1D13900B223A8 /* midThreeElementsOfAnOddArray.playground */,
 			);
 			name = Model;
@@ -128,6 +131,7 @@
 		BFCA5E771BF427B800AC056B /* Calls */ = {
 			isa = PBXGroup;
 			children = (
+				BF367A531BF1921F00B223A8 /* GithubService.swift */,
 				BFEEDC261BF12855007967A6 /* OAuthClient.swift */,
 				BFCA5E6F1BF412CE00AC056B /* GithubCreateRepoService.swift */,
 			);
@@ -137,6 +141,7 @@
 		BFEEDBEC1BF125BF007967A6 = {
 			isa = PBXGroup;
 			children = (
+				BFCA5E781BF46D6A00AC056B /* GetRepositories.swift */,
 				BF367A571BF192DE00B223A8 /* Model */,
 				BFEEDBF71BF125BF007967A6 /* GoGoGithub */,
 				BFEEDC0C1BF125BF007967A6 /* GoGoGithubTests */,
@@ -323,6 +328,7 @@
 				BFEEDC271BF12855007967A6 /* OAuthClient.swift in Sources */,
 				BFCA5E701BF412CE00AC056B /* GithubCreateRepoService.swift in Sources */,
 				BFEEDBFB1BF125BF007967A6 /* OAuthViewController.swift in Sources */,
+				BFCA5E791BF46D6A00AC056B /* GetRepositories.swift in Sources */,
 				BFCA5E6B1BF3E81F00AC056B /* KeyChainService.swift in Sources */,
 				BFCA5E6D1BF3F94400AC056B /* HomeViewController.swift in Sources */,
 				BF367A521BF18BA800B223A8 /* JSONParser.swift in Sources */,
