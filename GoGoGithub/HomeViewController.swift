@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    var createRepoTest = GithubCreateRepoService(name: "TestRepo")
+
+    
     class func identifier() -> String {
         return "HomeViewController"
     }
@@ -17,7 +20,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        GithubService.searchWithTerm("imageview") { (success, json) -> () in
+            if success {
+                
+                print(json)
+            }
+    }
+        
+
     }
 
     override func didReceiveMemoryWarning() {

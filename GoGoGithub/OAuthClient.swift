@@ -14,20 +14,20 @@ class OAuthClient {
     
     var token: String?
         {
-
+        
         get {
             return KeychainService.loadFromKeychain() as? String
         }
         
         set {
             if let newValue = newValue {
-             KeychainService.save(newValue)
-        }
+                KeychainService.save(newValue)
+            }
         }
     }
     
     private let kAccessTokenKey = "kAccessTokenKey"
-    private let kOAuthBaseURLString = "https://github.com/login/oauth/"
+            let kOAuthBaseURLString = "https://github.com/login/oauth/"
     private let kClientId = "405cf0ef46239dcd8971"
     private let kClientSecret = "b4418a2aab61ccf560cff2ab917e53eb9e19bed1"
     
@@ -35,7 +35,7 @@ class OAuthClient {
     
     func requestGithubAccess() {
         let authURL = NSURL(string: "\(kOAuthBaseURLString)authorize?client_id=\(kClientId)&scope=scope,email,repo)")!
-         UIApplication.sharedApplication().openURL(authURL)
+        UIApplication.sharedApplication().openURL(authURL)
     }
     
     func exchangeCodeInURL(codeURL : NSURL, completion: (success: Bool) -> ()) {
@@ -59,7 +59,6 @@ class OAuthClient {
                                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                                         completion(success: true)
                                     })
-                                    
                                 }
                             }
                         } catch _ {}
