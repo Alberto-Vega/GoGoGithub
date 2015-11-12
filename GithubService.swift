@@ -34,7 +34,7 @@ class GithubService {
                             
                             if let items = json["items"] as? [[String : AnyObject]] {
                                 completion(success: true, json: items)
-                                print(items)
+//                                print(items)
                             }
                         }
                     } catch _ {

@@ -16,11 +16,17 @@ class OAuthClient {
         {
         
         get {
+            
+            print("Saved value is: \(KeychainService.loadFromKeychain())")
+            
             return KeychainService.loadFromKeychain() as? String
         }
         
         set {
             if let newValue = newValue {
+                
+                print("New token is: \(newValue)")
+                
                 KeychainService.save(newValue)
             }
         }
@@ -34,7 +40,7 @@ class OAuthClient {
     static let shared = OAuthClient()
     
     func requestGithubAccess() {
-        let authURL = NSURL(string: "\(kOAuthBaseURLString)authorize?client_id=\(kClientId)&scope=scope,email,repo)")!
+        let authURL = NSURL(string: "\(kOAuthBaseURLString)authorize?client_id=\(kClientId)&scope=user,email,repo")!
         UIApplication.sharedApplication().openURL(authURL)
     }
     
@@ -54,9 +60,8 @@ class OAuthClient {
                                 print(rootObject["access_token"])
                                 
                                 if let user = rootObject["access_token"]as? String {
-                                    OAuthClient.shared.token =  user
-                                    
                                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                                        OAuthClient.shared.token =  user
                                         completion(success: true)
                                     })
                                 }

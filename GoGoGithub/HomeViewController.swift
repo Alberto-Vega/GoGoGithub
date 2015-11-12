@@ -19,35 +19,45 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        GithubService.searchWithTerm("imageview") { (success, json) -> () in
-            if success {
-                
-                print(json)
-            }
-    }
-    
-//        GithubCreateRepoService.init(name: "TEsting")
-//        GithubCreateRepoService.httpBody()
-        
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.createNewRepo()
     }
-    */
+    
+    func createNewRepo() {
+        guard let token =  OAuthClient.shared.token else {return}
+        guard let url = NSURL(string: "https://api.github.com/user/repos?access_token=\(token)") else { return }
+        
+        print(url)
+        
+        let parameters = ["name" : "HereIsNew"]
+        let body = try! NSJSONSerialization.dataWithJSONObject(parameters, options: .PrettyPrinted)
+        
+        let aRequest = NSMutableURLRequest(URL: url)
+        aRequest.setValue("application/json", forHTTPHeaderField:"Accept")
+        aRequest.HTTPBody = body
+        aRequest.HTTPMethod = "POST"
+        
+        NSURLSession.sharedSession().dataTaskWithRequest(aRequest, completionHandler: { (data, response, error) -> Void in
+            
+            if let error = error {
+                print(error)
+            }
+            
+            print(response)
+            
+            if let data = data {
+                let json = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+                print(json)
+            }
+            
+        }).resume()
+    }
 
 }
