@@ -12,10 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var oauthViewController: OAuthViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        self.checkOAuthStatus()
+        return true
+    }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        
+        OAuthClient.shared.exchangeCodeInURL(url) { (success) -> () in
+            if success {
+                guard let oauthViewController = self.oauthViewController else {return}
+                oauthViewController.processLogin()
+            }
+        }
+        
         return true
     }
 
@@ -40,7 +52,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func checkOAuthStatus() {
+        if let _ = OAuthClient.shared.token  {
+            print("We have a token at did finishLaunching with options")
+        } else {
+            print("We do not have a token at did finishLaunching with options")
+            self.presentOAuthViewController()
+        }
+    }
+    
+    func presentOAuthViewController() {
+        if let homeViewController = self.window?.rootViewController as? HomeViewController, storyboard = homeViewController.storyboard {
+            if let oAuthViewController = storyboard.instantiateViewControllerWithIdentifier(OAuthViewController.identifier()) as? OAuthViewController {
+                homeViewController.addChildViewController(oAuthViewController)
+                homeViewController.view.addSubview(oAuthViewController.view)
+                oAuthViewController.didMoveToParentViewController(homeViewController)
+                oAuthViewController.oAuthCompletionHandler = ({
+                    UIView.animateWithDuration(0.8, delay: 1.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                        oAuthViewController.view.alpha = 0.0
+                        }, completion: { (finished) -> Void in
+                            oAuthViewController.view.removeFromSuperview()
+                            oAuthViewController.removeFromParentViewController()
+                            /////////////////////////////////
+                            //HERE make the call for updates
+//                            homeViewController.update()
+                    })
+                })
+            
+                self.oauthViewController = oAuthViewController
+            }
 
-
+    }
+}
 }
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XPS-XB-PGC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Auth View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OAuthViewController" id="BYZ-38-t0r" customClass="OAuthViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yv2-dJ-Cml">
+                                <rect key="frame" x="200" y="413" width="200" height="32"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="M1w-dt-eSt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.29143853096755379" green="0.88263172947919821" blue="0.97554403724092431" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tiy-ph-Usk"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-developer-github" translatesAutoresizingMaskIntoConstraints="NO" id="woD-gZ-3K2">
+                                <rect key="frame" x="236" y="28" width="128" height="128"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="NwY-uA-A1g">
+                                <rect key="frame" x="229" y="164" width="143" height="146"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="5tA-Hf-slW"/>
+                                    <constraint firstAttribute="width" constant="143" id="yd6-EI-udf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NwY-uA-A1g" firstAttribute="top" secondItem="woD-gZ-3K2" secondAttribute="bottom" constant="8" id="FBC-Ec-FDR"/>
+                            <constraint firstItem="NwY-uA-A1g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iv7-a4-0U6"/>
+                            <constraint firstItem="yv2-dJ-Cml" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PQs-lD-yFx"/>
+                            <constraint firstItem="yv2-dJ-Cml" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zy0-ag-05r"/>
+                            <constraint firstItem="woD-gZ-3K2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="iPo-ig-dSc"/>
+                            <constraint firstItem="yv2-dJ-Cml" firstAttribute="top" secondItem="NwY-uA-A1g" secondAttribute="bottom" constant="103" id="ql5-9B-8Nj"/>
+                            <constraint firstItem="woD-gZ-3K2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tFN-yl-2qS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PQs-lD-yFx"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="606" y="355"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="jqb-OB-AKo">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="XPS-XB-PGC" customClass="HomeViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="821-cA-Q3m"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Cm-qu-baN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Pd-Gu-Bgf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWn-dZ-NFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328" y="355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Octocat" width="512" height="512"/>
+        <image name="logo-developer-github" width="128" height="128"/>
+    </resources>
 </document>
