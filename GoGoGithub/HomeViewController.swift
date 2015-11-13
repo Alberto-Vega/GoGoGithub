@@ -10,8 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var createRepoTest = GithubCreateRepoService(name: "TestRepo")
-
+//    var createRepoTest = GithubCreateRepoService(name: "Testingtesting")
+//    var searchRepos = GithubService.searchWithTerm("iOS") { (success, json) -> () in
+//        
+//    }
     
     class func identifier() -> String {
         return "HomeViewController"
@@ -19,6 +21,12 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GithubService.searchWithTerm("uiimage") { (success, json) -> () in
+            if success {
+                print(json)
+            }
+    }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +35,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.createNewRepo()
+//        self.createNewRepo()
     }
     
     func createNewRepo() {
@@ -36,7 +44,7 @@ class HomeViewController: UIViewController {
         
         print(url)
         
-        let parameters = ["name" : "HereIsNew"]
+        let parameters = ["name" : "HereIsNew1"]
         let body = try! NSJSONSerialization.dataWithJSONObject(parameters, options: .PrettyPrinted)
         
         let aRequest = NSMutableURLRequest(URL: url)

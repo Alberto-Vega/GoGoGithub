@@ -11,6 +11,8 @@
 		BF367A541BF1921F00B223A8 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF367A531BF1921F00B223A8 /* GithubService.swift */; settings = {ASSET_TAGS = (); }; };
 		BF367A561BF192D700B223A8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF367A551BF192D700B223A8 /* Repository.swift */; settings = {ASSET_TAGS = (); }; };
 		BF4A0CCA1BF530390018C934 /* CreateRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A0CC91BF530390018C934 /* CreateRepo.swift */; settings = {ASSET_TAGS = (); }; };
+		BF4A0CCC1BF549E80018C934 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A0CCB1BF549E80018C934 /* Owner.swift */; settings = {ASSET_TAGS = (); }; };
+		BF4A0CCE1BF54E810018C934 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A0CCD1BF54E810018C934 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		BFCA5E6B1BF3E81F00AC056B /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA5E6A1BF3E81F00AC056B /* KeyChainService.swift */; settings = {ASSET_TAGS = (); }; };
 		BFCA5E6D1BF3F94400AC056B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA5E6C1BF3F94400AC056B /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BFCA5E701BF412CE00AC056B /* GithubCreateRepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA5E6F1BF412CE00AC056B /* GithubCreateRepoService.swift */; settings = {ASSET_TAGS = (); }; };
@@ -51,6 +53,8 @@
 		BF367A551BF192D700B223A8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BF367A581BF1D13900B223A8 /* midThreeElementsOfAnOddArray.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = midThreeElementsOfAnOddArray.playground; sourceTree = "<group>"; };
 		BF4A0CC91BF530390018C934 /* CreateRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRepo.swift; sourceTree = "<group>"; };
+		BF4A0CCB1BF549E80018C934 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		BF4A0CCD1BF54E810018C934 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF7F763D1BF475AF00D6BB88 /* FindLowestAndHIghest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FindLowestAndHIghest.playground; sourceTree = "<group>"; };
 		BFCA5E6A1BF3E81F00AC056B /* KeyChainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		BFCA5E6C1BF3F94400AC056B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -115,8 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				BF367A551BF192D700B223A8 /* Repository.swift */,
+				BF4A0CCD1BF54E810018C934 /* User.swift */,
 				BF7F763D1BF475AF00D6BB88 /* FindLowestAndHIghest.playground */,
 				BF367A581BF1D13900B223A8 /* midThreeElementsOfAnOddArray.playground */,
+				BF4A0CCB1BF549E80018C934 /* Owner.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 				BFEEDC271BF12855007967A6 /* OAuthClient.swift in Sources */,
 				BFCA5E701BF412CE00AC056B /* GithubCreateRepoService.swift in Sources */,
 				BFEEDBFB1BF125BF007967A6 /* OAuthViewController.swift in Sources */,
+				BF4A0CCE1BF54E810018C934 /* User.swift in Sources */,
 				BFCA5E791BF46D6A00AC056B /* GetRepositories.swift in Sources */,
 				BFCA5E6B1BF3E81F00AC056B /* KeyChainService.swift in Sources */,
 				BFCA5E6D1BF3F94400AC056B /* HomeViewController.swift in Sources */,
@@ -340,6 +347,7 @@
 				BFEEDBF91BF125BF007967A6 /* AppDelegate.swift in Sources */,
 				BFCA5E721BF4180600AC056B /* APIRequest.swift in Sources */,
 				BF367A561BF192D700B223A8 /* Repository.swift in Sources */,
+				BF4A0CCC1BF549E80018C934 /* Owner.swift in Sources */,
 				BF4A0CCA1BF530390018C934 /* CreateRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

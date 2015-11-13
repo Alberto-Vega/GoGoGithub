@@ -21,25 +21,26 @@ class GithubService {
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             
             NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
-                
-                if let _ = error {
-                    completion(success: false, json: nil)
-                }
-                
-                if let data = data {
-                    
-                    do {
-                        
-                        if let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? [String : AnyObject] {
-                            
-                            if let items = json["items"] as? [[String : AnyObject]] {
-                                completion(success: true, json: items)
-//                                print(items)
+                if let response = response as? NSHTTPURLResponse {
+                    if response.statusCode == 200 && error == nil {
+                        if let data = data {
+                            do {
+                                
+                                let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+                                
+                                if let items = json["items"] as? [[String : AnyObject]] {
+                                    
+                                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                                        JSONParser.reposInfoFromJSON(items)
+                                    })
+                                }
+                                
+                            } catch let error {
+                                
+                                print(error)
+                                
                             }
                         }
-                    } catch _ {
-                        
-                        return completion(success: false,json: nil)
                     }
                 }
             }.resume()
